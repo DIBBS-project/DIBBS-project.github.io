@@ -98,9 +98,9 @@
 <div class="section" id="introduction">
 <h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
 <p>The DIBBS project provides a set of independent projects which, when they are
-collaborating, are constituting an operation publishing platform. These projects
-require a python 2.7 environment to be able to run, and their dependencies are
-meant to be installed via the <em>pip</em> package manager.</p>
+collaborating, are constituting a platform for publishing operations. These
+projects require a python 2.7 environment to be able to run, and their
+dependencies are meant to be installed via the <em>pip</em> package manager.</p>
 </div>
 <div class="section" id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
@@ -135,12 +135,12 @@ platform. A fully configured DIBBS platform requires the following projects to
 be configured:</p>
 <blockquote>
 <div><ul class="simple">
-<li><strong>Central Authentication System</strong></li>
-<li><strong>Architecture Portal</strong></li>
-<li><strong>Appliance Registry</strong></li>
-<li><strong>Resource Manager</strong></li>
-<li><strong>Operation Registry</strong></li>
-<li><strong>Operation Manager</strong></li>
+<li><a class="reference external" href="https://github.com/DIBBS-project/central_authentication_service">Central Authentication System</a></li>
+<li><a class="reference external" href="https://github.com/DIBBS-project/architecture_portal">Architecture Portal</a></li>
+<li><a class="reference external" href="https://github.com/DIBBS-project/appliance_registry">Appliance Registry</a></li>
+<li><a class="reference external" href="https://github.com/DIBBS-project/resource_manager">Resource Manager</a></li>
+<li><a class="reference external" href="https://github.com/DIBBS-project/operation_registry">Operation Registry</a></li>
+<li><a class="reference external" href="https://github.com/DIBBS-project/operation_manager">Operation Manager</a></li>
 </ul>
 </div></blockquote>
 <p>These projects are all Django projects and they share the same installation
@@ -164,8 +164,8 @@ given for the <strong>Central Authentication System</strong> only.</p>
 <h1>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="initializing-data">
 <h2>Initializing data<a class="headerlink" href="#initializing-data" title="Permalink to this headline">¶</a></h2>
-<p>First, you will need to create a user account on an OpenStack infrastructure. In
-the rest of this tutorial, we will assume that you have a <a class="reference external" href="https://www.chameleoncloud.org/">ChameleonCloud</a> account with the following characteristics:</p>
+<p>First, you will need a user account on an OpenStack infrastructure. In the rest
+of this tutorial, we will assume that you have a <a class="reference external" href="https://www.chameleoncloud.org/">ChameleonCloud</a> account with the following characteristics:</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="37%" />
@@ -180,7 +180,11 @@ the rest of this tutorial, we will assume that you have a <a class="reference ex
 </tr>
 </tbody>
 </table>
-<p>Create an initialization file based on JSON format as follows:</p>
+<p>In order to help users to get started, we explain how to configure the DIBBS
+platform to interact with the KVM infrastructure hosted at Chameleon. This
+process is automated thanks to the use of scripts publicly available on <a class="reference external" href="https://github.com/DIBBS-project/DIBBS-Architecture-Demo">Github</a>.</p>
+<p>First, create a JSON file called <em>infrastructure_description.json</em> with the
+following content:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
   <span class="s">&quot;credentials&quot;</span><span class="p">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -205,6 +209,16 @@ the rest of this tutorial, we will assume that you have a <a class="reference ex
 <div class="highlight-python"><div class="highlight"><pre>python create_appliances.py infrastructure_description.json
 </pre></div>
 </div>
+<p>Appliances and their implementation have been created. Now run the following command to upload your OpenStack credentials in the DIBBS platform:</p>
+<div class="highlight-python"><div class="highlight"><pre>python create_os_users.py infrastructure_description.json
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For each of the credentials specified in the configuration file, the
+<em>create_os_users.py</em> script will ask you to enter the corresponding
+password. This password is then encrypted and sent to the DIBBS platform.</p>
+</div>
 </div>
 <div class="section" id="first-interaction-with-the-rest-api">
 <h2>First interaction with the REST API<a class="headerlink" href="#first-interaction-with-the-rest-api" title="Permalink to this headline">¶</a></h2>
@@ -224,7 +238,7 @@ the rest of this tutorial, we will assume that you have a <a class="reference ex
     <span class="k">print</span> <span class="n">appliance</span><span class="p">[</span><span class="s">&quot;name&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>which results in:</p>
+<p>The execution of the preceding block of code should results in:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">common</span>
 <span class="n">hadoop</span>
 <span class="n">hadoop_old</span>
@@ -236,8 +250,8 @@ the rest of this tutorial, we will assume that you have a <a class="reference ex
 </div>
 <div class="section" id="api-description">
 <h1>API description<a class="headerlink" href="#api-description" title="Permalink to this headline">¶</a></h1>
-<p>Detailled descriptions of the REST APIs of each components of the DIBBS
-architecture can be found in the following table:</p>
+<p>Detailled descriptions of the REST APIs of each components of the DIBBS platform
+can be found in the following table:</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="28%" />
@@ -290,7 +304,7 @@ by the <em>common-dibbs</em> project. The project can be installed via pip::</p>
     <span class="k">print</span> <span class="n">appliance</span><span class="o">.</span><span class="n">name</span>
 </pre></div>
 </div>
-<p>which results in:</p>
+<p>The execution of the preceding block of code should results in:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">common</span>
 <span class="n">hadoop</span>
 <span class="n">hadoop_old</span>

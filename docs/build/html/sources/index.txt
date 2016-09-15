@@ -13,9 +13,9 @@ Introduction
 ============
 
 The DIBBS project provides a set of independent projects which, when they are
-collaborating, are constituting an operation publishing platform. These projects
-require a python 2.7 environment to be able to run, and their dependencies are
-meant to be installed via the *pip* package manager.
+collaborating, are constituting a platform for publishing operations. These
+projects require a python 2.7 environment to be able to run, and their
+dependencies are meant to be installed via the *pip* package manager.
 
 Installation
 ============
@@ -54,13 +54,12 @@ In this section we show how to install the projects that are composing the DIBBS
 platform. A fully configured DIBBS platform requires the following projects to
 be configured:
 
-  * **Central Authentication System**
-  * **Architecture Portal**
-  * **Appliance Registry**
-  * **Resource Manager**
-  * **Operation Registry**
-  * **Operation Manager**
-
+  * `Central Authentication System <https://github.com/DIBBS-project/central_authentication_service>`__
+  * `Architecture Portal <https://github.com/DIBBS-project/architecture_portal>`__
+  * `Appliance Registry <https://github.com/DIBBS-project/appliance_registry>`__
+  * `Resource Manager <https://github.com/DIBBS-project/resource_manager>`__
+  * `Operation Registry <https://github.com/DIBBS-project/operation_registry>`__
+  * `Operation Manager <https://github.com/DIBBS-project/operation_manager>`__
 
 These projects are all Django projects and they share the same installation
 instructions. In the remaining of this section, detailled instructions will be
@@ -85,8 +84,8 @@ Getting started
 Initializing data
 -----------------
 
-First, you will need to create a user account on an OpenStack infrastructure. In
-the rest of this tutorial, we will assume that you have a `ChameleonCloud
+First, you will need a user account on an OpenStack infrastructure. In the rest
+of this tutorial, we will assume that you have a `ChameleonCloud
 <https://www.chameleoncloud.org/>`__ account with the following characteristics:
 
 +----------+-----------------+
@@ -95,7 +94,13 @@ the rest of this tutorial, we will assume that you have a `ChameleonCloud
 | project  | "<projectname>" |
 +----------+-----------------+
 
-Create an initialization file based on JSON format as follows::
+In order to help users to get started, we explain how to configure the DIBBS
+platform to interact with the KVM infrastructure hosted at Chameleon. This
+process is automated thanks to the use of scripts publicly available on `Github
+<https://github.com/DIBBS-project/DIBBS-Architecture-Demo>`__.
+
+First, create a JSON file called *infrastructure_description.json* with the
+following content::
 
     {
       "credentials": [
@@ -120,6 +125,14 @@ Now that the configuration file is created, run the following command to initial
 
     python create_appliances.py infrastructure_description.json
 
+Appliances and their implementation have been created. Now run the following command to upload your OpenStack credentials in the DIBBS platform::
+
+    python create_os_users.py infrastructure_description.json
+
+.. note::
+    For each of the credentials specified in the configuration file, the
+    *create_os_users.py* script will ask you to enter the corresponding
+    password. This password is then encrypted and sent to the DIBBS platform.
 
 
 First interaction with the REST API
@@ -141,7 +154,7 @@ Below is a python example of how to interact directly with the Rest API::
     for appliance in appliances:
         print appliance["name"]
 
-which results in::
+The execution of the preceding block of code should results in::
 
     common
     hadoop
@@ -152,8 +165,8 @@ which results in::
 API description
 ===============
 
-Detailled descriptions of the REST APIs of each components of the DIBBS
-architecture can be found in the following table:
+Detailled descriptions of the REST APIs of each components of the DIBBS platform
+can be found in the following table:
 
 +--------------------+----------------------------------------------------+
 | Project            | Link to the API description                        |
@@ -195,7 +208,7 @@ Below is an example of a python script that interact with a deployed infrastruct
     for appliance in appliances:
         print appliance.name
 
-which results in::
+The execution of the preceding block of code should results in::
 
     common
     hadoop
