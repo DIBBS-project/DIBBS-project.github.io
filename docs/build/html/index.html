@@ -114,8 +114,8 @@ and perform their initialization.</p>
 </pre></div>
 </div>
 <p>To deploy and run a DIBBS platform, execute the <em>docker_reload.sh</em> script, which
-enables to deploy each DIBBS subservices in a dedicated Docker container. On
-systems based on debian and RHEL, <em>docker_reload.sh</em> will try to install Docker
+enables to deploy each DIBBS sub-services in a dedicated Docker container. On
+systems based on Debian and RHEL, <em>docker_reload.sh</em> will try to install Docker
 leveraging <em>yum</em> or <em>apt</em>. On OSX, the script assumes Docker that Docker is
 already installed.</p>
 <div class="admonition note">
@@ -124,7 +124,7 @@ already installed.</p>
 the official application. More details can be found at the official docker
 <a class="reference external" href="https://docs.docker.com/engine/installation/mac/">installation guide for OSX</a></p>
 </div>
-<p>Run the <em>docker_reload.sh</em> script with superuser security priviledges:</p>
+<p>Run the <em>docker_reload.sh</em> script with superuser security privileges:</p>
 <div class="highlight-python"><div class="highlight"><pre>sudo bash docker_reload.sh
 </pre></div>
 </div>
@@ -145,7 +145,7 @@ be configured:</p>
 </ul>
 </div></blockquote>
 <p>These projects are all Django projects and they share the same installation
-instructions. In the remaining of this section, detailled instructions will be
+instructions. In the remaining of this section, detailed instructions will be
 given for the <strong>Central Authentication System</strong> only.</p>
 <p>First clone the repository containing the source code:</p>
 <div class="highlight-python"><div class="highlight"><pre>git clone https://github.com/DIBBS-project/resource_manager.git
@@ -157,7 +157,7 @@ run the following command:</p>
 <div class="highlight-python"><div class="highlight"><pre>pip install -r requirements.txt
 </pre></div>
 </div>
-<p>Then from its source folder, run this command to initialise/reset the database:</p>
+<p>Then from its source folder, run this command to initialize/reset the database:</p>
 <div class="highlight-python"><div class="highlight"><pre>bash reset.sh
 </pre></div>
 </div>
@@ -212,7 +212,7 @@ following content:</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Now that the configuration file is created, run the following command to initialise infrastructures and appliances in the DIBBS platform:</p>
+<p>Now that the configuration file is created, run the following command to initialize infrastructures and appliances in the DIBBS platform:</p>
 <div class="highlight-python"><div class="highlight"><pre>python create_appliances.py infrastructure_description.json
 </pre></div>
 </div>
@@ -257,7 +257,7 @@ password. This password is then encrypted and sent to the DIBBS platform.</p>
 </div>
 <div class="section" id="api-description">
 <h1>API description<a class="headerlink" href="#api-description" title="Permalink to this headline">¶</a></h1>
-<p>Detailled descriptions of the REST APIs of each components of the DIBBS platform
+<p>Detailed descriptions of the REST APIs of each components of the DIBBS platform
 can be found in the following table:</p>
 <table border="1" class="docutils">
 <colgroup>

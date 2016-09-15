@@ -32,8 +32,8 @@ First, clone the project that contains the set of initialization scripts::
     git clone https://github.com/DIBBS-project/DIBBS-Architecture-Demo.git
 
 To deploy and run a DIBBS platform, execute the *docker_reload.sh* script, which
-enables to deploy each DIBBS subservices in a dedicated Docker container. On
-systems based on debian and RHEL, *docker_reload.sh* will try to install Docker
+enables to deploy each DIBBS sub-services in a dedicated Docker container. On
+systems based on Debian and RHEL, *docker_reload.sh* will try to install Docker
 leveraging *yum* or *apt*. On OSX, the script assumes Docker that Docker is
 already installed.
 
@@ -44,7 +44,7 @@ already installed.
     <https://docs.docker.com/engine/installation/mac/>`__
 
 
-Run the *docker_reload.sh* script with superuser security priviledges::
+Run the *docker_reload.sh* script with superuser security privileges::
 
     sudo bash docker_reload.sh
 
@@ -63,7 +63,7 @@ be configured:
   * `Operation Manager <https://github.com/DIBBS-project/operation_manager>`__
 
 These projects are all Django projects and they share the same installation
-instructions. In the remaining of this section, detailled instructions will be
+instructions. In the remaining of this section, detailed instructions will be
 given for the **Central Authentication System** only.
 
 First clone the repository containing the source code::
@@ -76,7 +76,7 @@ run the following command::
 
   pip install -r requirements.txt
 
-Then from its source folder, run this command to initialise/reset the database::
+Then from its source folder, run this command to initialize/reset the database::
 
   bash reset.sh
 
@@ -128,7 +128,7 @@ following content::
       ]
     }
 
-Now that the configuration file is created, run the following command to initialise infrastructures and appliances in the DIBBS platform::
+Now that the configuration file is created, run the following command to initialize infrastructures and appliances in the DIBBS platform::
 
     python create_appliances.py infrastructure_description.json
 
@@ -172,7 +172,7 @@ The execution of the preceding block of code should results in::
 API description
 ===============
 
-Detailled descriptions of the REST APIs of each components of the DIBBS platform
+Detailed descriptions of the REST APIs of each components of the DIBBS platform
 can be found in the following table:
 
 +--------------------+----------------------------------------------------+
