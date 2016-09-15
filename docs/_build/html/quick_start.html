@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Welcome to DIBBS’s documentation! &mdash; DIBBS 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="DIBBS 0.1 documentation" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="index.html">DIBBS 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Welcome to DIBBS&#8217;s documentation!</a></li>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#api-description">API description</a></li>
+<li><a class="reference internal" href="#using-clients">Using clients</a><ul>
+<li><a class="reference internal" href="#using-the-official-python-clients">Using the official python clients</a></li>
+<li><a class="reference internal" href="#generating-your-own-clients">Generating your own clients</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/quick_start.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="welcome-to-dibbs-s-documentation">
+<h1>Welcome to DIBBS&#8217;s documentation!<a class="headerlink" href="#welcome-to-dibbs-s-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul class="simple">
+</ul>
+</div>
+</div>
+<div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>The DIBBS environment is composed of several sub projects that require a proper
+environment to be configured.</p>
+</div>
+<div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<p>We provide a set of scripts that instantiate the DIBBS environment in dedicated
+Docker containers and perform its initialization.</p>
+<p>First, clone the project that contains initialization scripts:</p>
+<div class="highlight-python"><div class="highlight"><pre>git clone https://github.com/DIBBS-project/DIBBS-Architecture-Demo.git
+</pre></div>
+</div>
+<p>To deploy and run the DIBBS environment you can use the <em>docker_reload.sh</em>,
+which enables to deploy each DIBBS subservices in a dedicated Docker container.
+On debian and RHEL systems, <em>docker_reload.sh</em> will try to install Docker
+leveraging <em>yum</em> or <em>apt</em>. On OSX, it will assume that Docker is already
+installed.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Installation of Docker on a recent OSX system (&gt;10.10.3) is very simple with
+the official application. More details can be found at the official docker
+<a class="reference external" href="https://docs.docker.com/engine/installation/mac/">installation guide for OSX</a></p>
+</div>
+<p>Run the <em>docker_reload.sh</em> script with superuser security priviledges:</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo bash docker_reload.sh
+</pre></div>
+</div>
+</div>
+<div class="section" id="api-description">
+<h1>API description<a class="headerlink" href="#api-description" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="using-clients">
+<h1>Using clients<a class="headerlink" href="#using-clients" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="using-the-official-python-clients">
+<h2>Using the official python clients<a class="headerlink" href="#using-the-official-python-clients" title="Permalink to this headline">¶</a></h2>
+<p>It is possible to interact with the DIBBS environment using the clients provided
+by the <em>common-dibbs</em> project.</p>
+</div>
+<div class="section" id="generating-your-own-clients">
+<h2>Generating your own clients<a class="headerlink" href="#generating-your-own-clients" title="Permalink to this headline">¶</a></h2>
+<p>APIs of each sub project is described in YAML files (following the Swagger
+format), which can be used to generate API clients in many languages. To get
+more details, please take a look at the <a class="reference external" href="https://github.com/swagger-api/swagger-codegen">swagger-codegen</a> project.</p>
+<p>The following table summarizes where the API description files can be found:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="83%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Project</td>
+<td>Link to the API description file (Swagger YAML file)</td>
+</tr>
+<tr class="row-even"><td>Authentication System
+Operation Registry
+Operation Manager
+Appliance Registry
+Resource Manager</td>
+<td><a class="reference external" href="https://github.com/DIBBS-project/central_authentication_service/blob/master/casapp/static/swagger/swagger.yaml">https://github.com/DIBBS-project/central_authentication_service/blob/master/casapp/static/swagger/swagger.yaml</a>
+<a class="reference external" href="https://github.com/DIBBS-project/operation_registry/blob/master/orapp/static/swagger/swagger.yaml">https://github.com/DIBBS-project/operation_registry/blob/master/orapp/static/swagger/swagger.yaml</a>
+<a class="reference external" href="https://github.com/DIBBS-project/operation_manager/blob/master/omapp/static/swagger/swagger.yaml">https://github.com/DIBBS-project/operation_manager/blob/master/omapp/static/swagger/swagger.yaml</a>
+<a class="reference external" href="https://github.com/DIBBS-project/appliance_registry/blob/master/arapp/static/swagger/swagger.yaml">https://github.com/DIBBS-project/appliance_registry/blob/master/arapp/static/swagger/swagger.yaml</a>
+<a class="reference external" href="https://github.com/DIBBS-project/resource_manager/blob/master/rmapp/static/swagger/swagger.yaml">https://github.com/DIBBS-project/resource_manager/blob/master/rmapp/static/swagger/swagger.yaml</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><em>Index</em></a></li>
+<li><a class="reference internal" href="py-modindex.html"><em>Module Index</em></a></li>
+<li><a class="reference internal" href="search.html"><em>Search Page</em></a></li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="index.html">DIBBS 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2016, DIBBS project.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

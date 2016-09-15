@@ -1,0 +1,85 @@
+.. DIBBS documentation master file, created by
+   sphinx-quickstart on Wed Sep 14 09:26:21 2016.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to DIBBS's documentation!
+=================================
+
+.. toctree::
+   :maxdepth: 2
+
+Introduction
+============
+
+The DIBBS environment is composed of several sub projects that require a proper
+environment to be configured.
+
+Installation
+============
+
+We provide a set of scripts that instantiate the DIBBS environment in dedicated
+Docker containers and perform its initialization.
+
+First, clone the project that contains initialization scripts::
+
+   git clone https://github.com/DIBBS-project/DIBBS-Architecture-Demo.git
+
+To deploy and run the DIBBS environment you can use the *docker_reload.sh*,
+which enables to deploy each DIBBS subservices in a dedicated Docker container.
+On debian and RHEL systems, *docker_reload.sh* will try to install Docker
+leveraging *yum* or *apt*. On OSX, it will assume that Docker is already
+installed.
+
+.. note::
+   Installation of Docker on a recent OSX system (>10.10.3) is very simple with
+   the official application. More details can be found at the official docker
+   `installation guide for OSX
+   <https://docs.docker.com/engine/installation/mac/>`__
+
+
+Run the *docker_reload.sh* script with superuser security priviledges::
+
+   sudo bash docker_reload.sh
+
+
+API description
+===============
+
+Using clients
+=============
+
+Using the official python clients
+---------------------------------
+
+It is possible to interact with the DIBBS environment using the clients provided
+by the *common-dibbs* project.
+
+Generating your own clients
+---------------------------
+
+APIs of each sub project is described in YAML files (following the Swagger
+format), which can be used to generate API clients in many languages. To get
+more details, please take a look at the `swagger-codegen
+<https://github.com/swagger-api/swagger-codegen>`__ project.
+
+The following table summarizes where the API description files can be found:
+
++-----------------------+----------------------------------------------------------------------------------------------------------------+
+| Project               | Link to the API description file (Swagger YAML file)                                                           |
++-----------------------+----------------------------------------------------------------------------------------------------------------+
+| Authentication System | https://github.com/DIBBS-project/central_authentication_service/blob/master/casapp/static/swagger/swagger.yaml |
+| Operation Registry    | https://github.com/DIBBS-project/operation_registry/blob/master/orapp/static/swagger/swagger.yaml              |
+| Operation Manager     | https://github.com/DIBBS-project/operation_manager/blob/master/omapp/static/swagger/swagger.yaml               |
+| Appliance Registry    | https://github.com/DIBBS-project/appliance_registry/blob/master/arapp/static/swagger/swagger.yaml              |
+| Resource Manager      | https://github.com/DIBBS-project/resource_manager/blob/master/rmapp/static/swagger/swagger.yaml                |
++-----------------------+----------------------------------------------------------------------------------------------------------------+
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+
