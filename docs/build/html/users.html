@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>User’s documentation &mdash; DIBBS 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="static/jquery.js"></script>
+    <script type="text/javascript" src="static/underscore.js"></script>
+    <script type="text/javascript" src="static/doctools.js"></script>
+    <link rel="top" title="DIBBS 0.1 documentation" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="index.html">DIBBS 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">User&#8217;s documentation</a></li>
+<li><a class="reference internal" href="#user-authentication">User authentication</a></li>
+<li><a class="reference internal" href="#managing-openstack-credentials">Managing OpenStack credentials</a></li>
+<li><a class="reference internal" href="#community-contributing-user-s-documentation">Community Contributing User&#8217;s documentation</a><ul>
+<li><a class="reference internal" href="#appliances-workflow">Appliances workflow</a></li>
+<li><a class="reference internal" href="#operations-workflow">Operations workflow</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#end-user-s-documentation">End User&#8217;s documentation</a><ul>
+<li><a class="reference internal" href="#instantiating-an-operation">Instantiating an operation</a></li>
+<li><a class="reference internal" href="#executing-an-operation-instance">Executing an operation instance</a></li>
+<li><a class="reference internal" href="#managing-deployed-appliances">Managing deployed appliances</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="sources/users.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="user-s-documentation">
+<h1>User&#8217;s documentation<a class="headerlink" href="#user-s-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul class="simple">
+</ul>
+</div>
+</div>
+<div class="section" id="user-authentication">
+<h1>User authentication<a class="headerlink" href="#user-authentication" title="Permalink to this headline">¶</a></h1>
+<p>On the first access you will be presented the following screen which states that
+you need to authenticate. Click on the <strong>authenticate</strong> button to be redirected
+on the Central Authenticate Service.</p>
+<img alt="images/auth_1.png" src="images/auth_1.png" />
+<p>On the following screen you will be asked to enter your credentials. If you
+don&#8217;t have any credentials yet, you have to request the creation of an account
+by clicking on the <strong>sign up</strong> link.</p>
+<img alt="images/auth_2.png" src="images/auth_2.png" />
+<p>The following screen depicts the process of requesting the creation of a new
+account on a DIBBS plateform. After the submission of this form, you will be
+redirected to the previous screen and you will be able to sign-in.</p>
+<img alt="images/auth_3.png" src="images/auth_3.png" />
+</div>
+<div class="section" id="managing-openstack-credentials">
+<h1>Managing OpenStack credentials<a class="headerlink" href="#managing-openstack-credentials" title="Permalink to this headline">¶</a></h1>
+<p>The DIBBS platform needs to have access to some OpenStack credentials in order
+to spawn computing resources that will host the execution of operations.</p>
+<p>To access to the credential management page, click on your username on the
+top-right corner, and then click on the <strong>Credentials</strong> button as depicted in
+the following screen:</p>
+<img alt="images/user_1.png" src="images/user_1.png" />
+<p>You will land on the following screen which enables to see the credentials you
+already registered in the DIBBS platform.</p>
+<img alt="images/user_2.png" src="images/user_2.png" />
+<p>To add new credentials to the DIBBS platform, please click on the <strong>+ Add
+Credentials</strong> located in the top-right corner. You will land on the following
+form.</p>
+<img alt="images/user_3.png" src="images/user_3.png" />
+</div>
+<div class="section" id="community-contributing-user-s-documentation">
+<h1>Community Contributing User&#8217;s documentation<a class="headerlink" href="#community-contributing-user-s-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="appliances-workflow">
+<h2>Appliances workflow<a class="headerlink" href="#appliances-workflow" title="Permalink to this headline">¶</a></h2>
+<img alt="images/ccu_appliance_1.png" src="images/ccu_appliance_1.png" />
+<img alt="images/ccu_appliance_2.png" src="images/ccu_appliance_2.png" />
+<img alt="images/ccu_appliance_3.png" src="images/ccu_appliance_3.png" />
+<img alt="images/ccu_appliance_4.png" src="images/ccu_appliance_4.png" />
+</div>
+<div class="section" id="operations-workflow">
+<h2>Operations workflow<a class="headerlink" href="#operations-workflow" title="Permalink to this headline">¶</a></h2>
+<img alt="images/ccu_1.png" src="images/ccu_1.png" />
+<img alt="images/ccu_2.png" src="images/ccu_2.png" />
+<img alt="images/ccu_3.png" src="images/ccu_3.png" />
+<img alt="images/ccu_4.png" src="images/ccu_4.png" />
+</div>
+</div>
+<div class="section" id="end-user-s-documentation">
+<h1>End User&#8217;s documentation<a class="headerlink" href="#end-user-s-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="instantiating-an-operation">
+<h2>Instantiating an operation<a class="headerlink" href="#instantiating-an-operation" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="executing-an-operation-instance">
+<h2>Executing an operation instance<a class="headerlink" href="#executing-an-operation-instance" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="managing-deployed-appliances">
+<h2>Managing deployed appliances<a class="headerlink" href="#managing-deployed-appliances" title="Permalink to this headline">¶</a></h2>
+<img alt="images/eu_1.png" src="images/eu_1.png" />
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><em>Index</em></a></li>
+<li><a class="reference internal" href="py-modindex.html"><em>Module Index</em></a></li>
+<li><a class="reference internal" href="search.html"><em>Search Page</em></a></li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="index.html">DIBBS 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2016, DIBBS project.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>
