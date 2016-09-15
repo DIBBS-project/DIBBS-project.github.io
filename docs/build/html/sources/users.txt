@@ -25,7 +25,7 @@ by clicking on the **sign up** link.
 .. image:: images/auth_2.png
 
 The following screen depicts the process of requesting the creation of a new
-account on a DIBBS plateform. After the submission of this form, you will be
+account on a DIBBS platform. After the submission of this form, you will be
 redirected to the previous screen and you will be able to sign-in.
 
 .. image:: images/auth_3.png
