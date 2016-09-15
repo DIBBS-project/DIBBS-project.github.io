@@ -1,0 +1,399 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Welcome to DIBBS’s documentation! &mdash; DIBBS 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="DIBBS 0.1 documentation" href="#" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="#">DIBBS 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Welcome to DIBBS&#8217;s documentation!</a></li>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#installation">Installation</a><ul>
+<li><a class="reference internal" href="#via-docker">Via docker</a></li>
+<li><a class="reference internal" href="#manual-installation">Manual installation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#getting-started">Getting started</a><ul>
+<li><a class="reference internal" href="#initializing-data">Initializing data</a></li>
+<li><a class="reference internal" href="#first-interaction-with-the-rest-api">First interaction with the REST API</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#api-description">API description</a></li>
+<li><a class="reference internal" href="#using-clients">Using clients</a><ul>
+<li><a class="reference internal" href="#using-the-official-python-clients">Using the official python clients</a></li>
+<li><a class="reference internal" href="#list-of-python-clients">List of python clients</a></li>
+<li><a class="reference internal" href="#generating-your-own-clients">Generating your own clients</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#acknowledgment">Acknowledgment</a></li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/index.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="welcome-to-dibbs-s-documentation">
+<h1>Welcome to DIBBS&#8217;s documentation!<a class="headerlink" href="#welcome-to-dibbs-s-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul class="simple">
+</ul>
+</div>
+</div>
+<div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>The DIBBS project provides a set of independent projects which, when they are
+collaborating, are constituting an operation publishing platform. These projects
+require a python 2.7 environment to be able to run, and their dependencies are
+meant to be installed via the <em>pip</em> package manager.</p>
+</div>
+<div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="via-docker">
+<h2>Via docker<a class="headerlink" href="#via-docker" title="Permalink to this headline">¶</a></h2>
+<p>In order to ease the deployment of a DIBBS platform, we provide a set of scripts
+that instantiate all the software components inside dedicated Docker containers
+and perform their initialization.</p>
+<p>First, clone the project that contains the set of initialization scripts:</p>
+<div class="highlight-python"><div class="highlight"><pre>git clone https://github.com/DIBBS-project/DIBBS-Architecture-Demo.git
+</pre></div>
+</div>
+<p>To deploy and run a DIBBS platform, execute the <em>docker_reload.sh</em> script, which
+enables to deploy each DIBBS subservices in a dedicated Docker container. On
+systems based on debian and RHEL, <em>docker_reload.sh</em> will try to install Docker
+leveraging <em>yum</em> or <em>apt</em>. On OSX, it assumes Docker to be already installed.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Installation of Docker on a recent OSX system (&gt;10.10.3) is very simple with
+the official application. More details can be found at the official docker
+<a class="reference external" href="https://docs.docker.com/engine/installation/mac/">installation guide for OSX</a></p>
+</div>
+<p>Run the <em>docker_reload.sh</em> script with superuser security priviledges:</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo bash docker_reload.sh
+</pre></div>
+</div>
+</div>
+<div class="section" id="manual-installation">
+<h2>Manual installation<a class="headerlink" href="#manual-installation" title="Permalink to this headline">¶</a></h2>
+<p>In this section we show how to install the projects that are composing the DIBBS
+platform. A fully configured DIBBS platform requires the following projects to
+be configured:</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>Central Authentication System</strong></li>
+<li><strong>Architecture Portal</strong></li>
+<li><strong>Appliance Registry</strong></li>
+<li><strong>Resource Manager</strong></li>
+<li><strong>Operation Registry</strong></li>
+<li><strong>Operation Manager</strong></li>
+</ul>
+</div></blockquote>
+<p>These projects are all Django projects and they share the same installation
+instructions. In the remaining of this section, detailled instructions will be
+given for the <strong>Central Authentication System</strong> only.</p>
+<p>First clone the repository containing the source code:</p>
+<div class="highlight-python"><div class="highlight"><pre>git clone https://github.com/DIBBS-project/resource_manager.git
+</pre></div>
+</div>
+<p>Then from its source folder, run this command to initialise/reset the database:</p>
+<div class="highlight-python"><div class="highlight"><pre>bash reset.sh
+</pre></div>
+</div>
+<p>Lastly, run this command to launch the Django web application:</p>
+<div class="highlight-python"><div class="highlight"><pre>python manage.py runserver 0.0.0.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="getting-started">
+<h1>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="initializing-data">
+<h2>Initializing data<a class="headerlink" href="#initializing-data" title="Permalink to this headline">¶</a></h2>
+<p>First, you will need to create a user account on an OpenStack infrastructure. In
+the rest of this tutorial, we will assume that you have a <a class="reference external" href="https://www.chameleoncloud.org/">ChameleonCloud</a> account with the following characteristics:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="37%" />
+<col width="63%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>username</td>
+<td>&#8220;&lt;username&gt;&#8221;</td>
+</tr>
+<tr class="row-even"><td>project</td>
+<td>&#8220;&lt;projectname&gt;&#8221;</td>
+</tr>
+</tbody>
+</table>
+<p>Create an initialization file based on JSON format as follows:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s">&quot;credentials&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;kvm@tacc_credentials&quot;</span><span class="p">,</span>
+      <span class="s">&quot;username&quot;</span><span class="p">:</span> <span class="s">&quot;&lt;username&gt;&quot;</span><span class="p">,</span>
+      <span class="s">&quot;project_name&quot;</span><span class="p">:</span> <span class="s">&quot;&lt;projectname&gt;&quot;</span><span class="p">,</span>
+      <span class="s">&quot;flavor&quot;</span><span class="p">:</span> <span class="s">&quot;m1.medium&quot;</span><span class="p">,</span>
+      <span class="s">&quot;infrastructure&quot;</span><span class="p">:</span> <span class="s">&quot;kvm@tacc&quot;</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s">&quot;infrastructures&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;kvm@tacc&quot;</span><span class="p">,</span>
+      <span class="s">&quot;contact_url&quot;</span><span class="p">:</span> <span class="s">&quot;https://openstack.tacc.chameleoncloud.org:5000/v2.0&quot;</span><span class="p">,</span>
+      <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="s">&quot;openstack&quot;</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Now that the configuration file is created, run the following command to initialise infrastructures and appliances in the DIBBS platform:</p>
+<div class="highlight-python"><div class="highlight"><pre>python create_appliances.py infrastructure_description.json
+</pre></div>
+</div>
+</div>
+<div class="section" id="first-interaction-with-the-rest-api">
+<h2>First interaction with the REST API<a class="headerlink" href="#first-interaction-with-the-rest-api" title="Permalink to this headline">¶</a></h2>
+<p>Below is a python example of how to interact directly with the Rest API:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#!/usr/bin/env python</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">requests.auth</span> <span class="kn">import</span> <span class="n">HTTPBasicAuth</span>
+
+<span class="n">appliance_registry_url</span> <span class="o">=</span> <span class="s">&quot;http://127.0.0.1:8003&quot;</span>
+
+<span class="c"># Create an HTTP request that will fetch the existing appliances</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;</span><span class="si">%s</span><span class="s">/appliances&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">appliance_registry_url</span><span class="p">,),</span>
+                      <span class="n">auth</span><span class="o">=</span><span class="n">HTTPBasicAuth</span><span class="p">(</span><span class="s">&#39;admin&#39;</span><span class="p">,</span> <span class="s">&#39;pass&#39;</span><span class="p">))</span>
+
+<span class="n">appliances</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">appliance</span> <span class="ow">in</span> <span class="n">appliances</span><span class="p">:</span>
+    <span class="k">print</span> <span class="n">appliance</span><span class="p">[</span><span class="s">&quot;name&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>which results in:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">common</span>
+<span class="n">hadoop</span>
+<span class="n">hadoop_old</span>
+<span class="n">hadoop_urbanflow</span>
+<span class="n">mongodb</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="api-description">
+<h1>API description<a class="headerlink" href="#api-description" title="Permalink to this headline">¶</a></h1>
+<p>Detailled descriptions of the REST APIs of each components of the DIBBS
+architecture can be found in the following table:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Project</th>
+<th class="head">Link to the API description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Operation Registry</td>
+<td><a class="reference external" href="https://dibbs-project.github.io/operation_registry">https://dibbs-project.github.io/operation_registry</a></td>
+</tr>
+<tr class="row-odd"><td>Operation Manager</td>
+<td><a class="reference external" href="https://dibbs-project.github.io/operation_manager">https://dibbs-project.github.io/operation_manager</a></td>
+</tr>
+<tr class="row-even"><td>Appliance Registry</td>
+<td><a class="reference external" href="https://dibbs-project.github.io/appliance_registry">https://dibbs-project.github.io/appliance_registry</a></td>
+</tr>
+<tr class="row-odd"><td>Resource Manager</td>
+<td><a class="reference external" href="https://dibbs-project.github.io/resource_manager">https://dibbs-project.github.io/resource_manager</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="using-clients">
+<h1>Using clients<a class="headerlink" href="#using-clients" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="using-the-official-python-clients">
+<h2>Using the official python clients<a class="headerlink" href="#using-the-official-python-clients" title="Permalink to this headline">¶</a></h2>
+<p>It is possible to interact with the DIBBS environment using the clients provided
+by the <em>common-dibbs</em> project. The project can be installed via pip::</p>
+<div class="highlight-python"><div class="highlight"><pre>pip install common-dibbs
+</pre></div>
+</div>
+<p>Below is an example of a python script that interact with a deployed infrastructure::</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#!/usr/bin/env python</span>
+<span class="kn">from</span> <span class="nn">common_dibbs.clients.ar_client</span> <span class="kn">import</span> <span class="n">AppliancesApi</span>
+<span class="kn">from</span> <span class="nn">common_dibbs.misc</span> <span class="kn">import</span> <span class="n">configure_basic_authentication</span>
+
+<span class="n">appliance_registry_url</span> <span class="o">=</span> <span class="s">&quot;http://127.0.0.1:8003&quot;</span>
+
+<span class="c"># Create an API client for Appliances</span>
+<span class="n">appliances_client</span> <span class="o">=</span> <span class="n">AppliancesApi</span><span class="p">()</span>
+<span class="n">appliances_client</span><span class="o">.</span><span class="n">api_client</span><span class="o">.</span><span class="n">host</span> <span class="o">=</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">appliance_registry_url</span><span class="p">,)</span>
+<span class="n">configure_basic_authentication</span><span class="p">(</span><span class="n">appliances_client</span><span class="p">,</span> <span class="s">&quot;admin&quot;</span><span class="p">,</span> <span class="s">&quot;pass&quot;</span><span class="p">)</span>
+
+<span class="n">appliances</span> <span class="o">=</span> <span class="n">appliances_client</span><span class="o">.</span><span class="n">appliances_get</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">appliance</span> <span class="ow">in</span> <span class="n">appliances</span><span class="p">:</span>
+    <span class="k">print</span> <span class="n">appliance</span><span class="o">.</span><span class="n">name</span>
+</pre></div>
+</div>
+<p>which results in:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">common</span>
+<span class="n">hadoop</span>
+<span class="n">hadoop_old</span>
+<span class="n">hadoop_urbanflow</span>
+<span class="n">mongodb</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="list-of-python-clients">
+<h2>List of python clients<a class="headerlink" href="#list-of-python-clients" title="Permalink to this headline">¶</a></h2>
+<p>The following table gives for each of the DIBBS sub projects, its corresponding python package:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="66%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Project</th>
+<th class="head">Corresponding Python package</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Operation Registry</td>
+<td>common_dibbs.clients.or_client</td>
+</tr>
+<tr class="row-odd"><td>Operation Manager</td>
+<td>common_dibbs.clients.om_client</td>
+</tr>
+<tr class="row-even"><td>Appliance Registry</td>
+<td>common_dibbs.clients.ar_client</td>
+</tr>
+<tr class="row-odd"><td>Resource Manager</td>
+<td>common_dibbs.clients.rm_client</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="generating-your-own-clients">
+<h2>Generating your own clients<a class="headerlink" href="#generating-your-own-clients" title="Permalink to this headline">¶</a></h2>
+<p>APIs of each sub project is described in YAML files (following the Swagger
+format), which can be used to generate API clients in many languages. To get
+more details, please take a look at the <a class="reference external" href="https://github.com/swagger-api/swagger-codegen">swagger-codegen</a> project.</p>
+<p>The following table summarizes where the API description files can be found:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="83%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Project</th>
+<th class="head">Link to the API description file (Swagger YAML file)</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Authentication System</td>
+<td><a class="reference external" href="https://github.com/DIBBS-project/central_authentication_service/blob/master/casapp/static/swagger/swagger.yaml">https://github.com/DIBBS-project/central_authentication_service/blob/master/casapp/static/swagger/swagger.yaml</a></td>
+</tr>
+<tr class="row-odd"><td>Operation Registry</td>
+<td><a class="reference external" href="https://github.com/DIBBS-project/operation_registry/blob/master/orapp/static/swagger/swagger.yaml">https://github.com/DIBBS-project/operation_registry/blob/master/orapp/static/swagger/swagger.yaml</a></td>
+</tr>
+<tr class="row-even"><td>Operation Manager</td>
+<td><a class="reference external" href="https://github.com/DIBBS-project/operation_manager/blob/master/omapp/static/swagger/swagger.yaml">https://github.com/DIBBS-project/operation_manager/blob/master/omapp/static/swagger/swagger.yaml</a></td>
+</tr>
+<tr class="row-odd"><td>Appliance Registry</td>
+<td><a class="reference external" href="https://github.com/DIBBS-project/appliance_registry/blob/master/arapp/static/swagger/swagger.yaml">https://github.com/DIBBS-project/appliance_registry/blob/master/arapp/static/swagger/swagger.yaml</a></td>
+</tr>
+<tr class="row-even"><td>Resource Manager</td>
+<td><a class="reference external" href="https://github.com/DIBBS-project/resource_manager/blob/master/rmapp/static/swagger/swagger.yaml">https://github.com/DIBBS-project/resource_manager/blob/master/rmapp/static/swagger/swagger.yaml</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="acknowledgment">
+<h1>Acknowledgment<a class="headerlink" href="#acknowledgment" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><em>Index</em></a></li>
+<li><a class="reference internal" href="py-modindex.html"><em>Module Index</em></a></li>
+<li><a class="reference internal" href="search.html"><em>Search Page</em></a></li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="#">DIBBS 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2016, DIBBS project.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>
