@@ -14,7 +14,7 @@ User authentication
 
 On the first access you will be presented the following screen which states that
 you need to authenticate. Click on the **authenticate** button to be redirected
-on the Central Authenticate Service.
+on the Central Authentication Service.
 
 .. image:: images/auth_1.png
 
