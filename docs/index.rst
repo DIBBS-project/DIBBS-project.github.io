@@ -34,7 +34,8 @@ First, clone the project that contains the set of initialization scripts::
 To deploy and run a DIBBS platform, execute the *docker_reload.sh* script, which
 enables to deploy each DIBBS subservices in a dedicated Docker container. On
 systems based on debian and RHEL, *docker_reload.sh* will try to install Docker
-leveraging *yum* or *apt*. On OSX, it assumes Docker to be already installed.
+leveraging *yum* or *apt*. On OSX, the script assumes Docker that Docker is
+already installed.
 
 .. note::
     Installation of Docker on a recent OSX system (>10.10.3) is very simple with
@@ -68,6 +69,12 @@ given for the **Central Authentication System** only.
 First clone the repository containing the source code::
 
   git clone https://github.com/DIBBS-project/resource_manager.git
+
+Each project contains a *requirements.txt* file that describes what are the
+requirements in terms of Python libraries. To install the dependencies, please
+run the following command::
+
+  pip install -r requirements.txt
 
 Then from its source folder, run this command to initialise/reset the database::
 
