@@ -49,7 +49,7 @@ already registered in the DIBBS platform.
 
 To add new credentials to the DIBBS platform, please click on the **+ Add
 Credentials** located in the top-right corner. You will land on the following
-form.
+form:
 
 .. image:: images/user_3.png
 
